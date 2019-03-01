@@ -6,6 +6,10 @@
  */
 public class PQHeap implements PQ{
 
+    public PQHeap(int i){
+        
+    }
+    
     @Override
     public Element extractMin() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -1,7 +1,8 @@
 
 /**
  *
- * @author Robin Lausten Petersen - ropet17
+ * @author Robin Lausten Petersen   - ropet17
+ * @author Jeppe Enevold Jensen     - jeppj17
  */
 public class PQHeap implements PQ{
 

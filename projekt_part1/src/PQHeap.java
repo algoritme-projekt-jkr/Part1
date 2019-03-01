@@ -6,9 +6,11 @@
  * @author Kim Christensen          - kichr17
  */
 public class PQHeap implements PQ{
-
+    
+    Element[]elements;
+    
     public PQHeap(int i){
-        
+        elements = new Element[i];
     }
     
     @Override

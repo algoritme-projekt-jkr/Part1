@@ -26,7 +26,16 @@ public class PQHeap implements PQ {
 
     @Override
     public void insert(Element e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = heapSize;
+        elements[i] = e;
+        
+        while(i > 0 && elements[parent(i)].getKey()> elements[i].getKey()){
+            Element temp = elements[i];
+            elements[i] = elements[parent(i)];
+            elements[parent(i)] = temp;
+            i = parent(i);
+        }
+        heapSize++;
     }
 
     private int parent(int i) {

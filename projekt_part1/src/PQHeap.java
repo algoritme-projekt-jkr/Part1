@@ -1,4 +1,3 @@
-
 /**
  *
  * @author Robin Lausten Petersen   - ropet17
@@ -29,7 +28,6 @@ public class PQHeap implements PQ {
         
         int i = heapSize;
         elements[i] = e;
-        
         while(i > 0 && elements[parent(i)].getKey()> elements[i].getKey()){
             Element temp = elements[i];
             elements[i] = elements[parent(i)];

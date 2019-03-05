@@ -50,11 +50,6 @@ public class PQHeap implements PQ {
         return (i + 1) * 2;
     }
     
-    private Element heapMinimum(){
-        return elements[0];
-    }
-    
-    
     private void minHeapify(int i){
         int l = left(i);
         int r = right(i);

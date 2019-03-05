@@ -15,10 +15,10 @@ public class PQHeap implements PQ {
         heapSize = 0;
     }
 
-    @Override
+    @Override 
     public Element extractMin() {
         Element min = elements[0];
-        elements[0] = elements[heapSize];
+        elements[0] = elements[heapSize-1];
         heapSize--;
         minHeapify(0);
         return min;
@@ -26,6 +26,7 @@ public class PQHeap implements PQ {
 
     @Override
     public void insert(Element e) {
+        
         int i = heapSize;
         elements[i] = e;
         
@@ -39,7 +40,7 @@ public class PQHeap implements PQ {
     }
 
     private int parent(int i) {
-        return (int) Math.floor(i-1 / 2);
+        return (int) Math.floor((i-1) / 2);
     }
 
     private int left(int i) {
@@ -50,16 +51,16 @@ public class PQHeap implements PQ {
         return (i + 1) * 2;
     }
     
-    private void minHeapify(int i){
+    private void minHeapify(int i){ 
         int l = left(i);
         int r = right(i);
         int smallest;
-        if(l <= heapSize && elements[l].getKey() < elements[i].getKey()){
+        if(l < heapSize && elements[l].getKey() < elements[i].getKey()){
             smallest = l;
         }else {
             smallest = i;
         }
-        if(r <= heapSize && elements[r].getKey() < elements[smallest].getKey()){
+        if(r < heapSize && elements[r].getKey() < elements[smallest].getKey()){
             smallest = r;
         }
         if (smallest != i){

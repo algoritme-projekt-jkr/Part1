@@ -27,7 +27,7 @@ public class PQHeap implements PQ {
     }
 
     private int parent(int i) {
-        return (int) Math.floor(i / 2);
+        return (int) Math.floor(i-1 / 2);
     }
 
     private int left(int i) {

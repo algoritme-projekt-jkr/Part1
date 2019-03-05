@@ -18,7 +18,10 @@ public class PQHeap implements PQ {
     @Override
     public Element extractMin() {
         Element min = elements[0];
-        
+        elements[0] = elements[heapSize];
+        heapSize--;
+        minHeapify(0);
+        return min;
     }
 
     @Override
@@ -60,11 +63,7 @@ public class PQHeap implements PQ {
             elements[i] = elements[smallest];
             elements[smallest] = temp;
             minHeapify(smallest);
-        }
-        
-        
-        
-        
+        } 
     }
     
 

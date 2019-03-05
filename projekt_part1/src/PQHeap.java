@@ -1,4 +1,3 @@
-
 /**
  *
  * @author Robin Lausten Petersen   - ropet17
@@ -18,7 +17,7 @@ public class PQHeap implements PQ {
     @Override
     public Element extractMin() {
         Element min = elements[0];
-        elements[0] = elements[heapSize];
+        elements[0] = elements[heapSize-1];
         heapSize--;
         minHeapify(0);
         return min;
@@ -28,7 +27,6 @@ public class PQHeap implements PQ {
     public void insert(Element e) {
         int i = heapSize;
         elements[i] = e;
-        
         while(i > 0 && elements[parent(i)].getKey()> elements[i].getKey()){
             Element temp = elements[i];
             elements[i] = elements[parent(i)];

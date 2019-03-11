@@ -24,8 +24,7 @@ public class PQHeap implements PQ {
     }
 
     @Override
-    public void insert(Element e) {
-        
+    public void insert(Element e) {    
         int i = heapSize; //define index for insertion as being at the bottum of the heap
         elements[i] = e; //inserting the element
         while(i > 0 && elements[parent(i)].getKey()> elements[i].getKey()){ //As long as current index isn't at the root and Parent is greater than the current element the following loop is repeated.
